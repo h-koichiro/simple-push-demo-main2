@@ -21,11 +21,12 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTION"
   );
-  // res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
 
-app.post("/api/v3/sendpush", async function (request, res) {
+// app.post("/api/v3/sendpush", async function (request, res) {
+app.post("/api/send", async function (request, res) {
   try {
     const requestData = request.body;
     const httpsOptions = {
